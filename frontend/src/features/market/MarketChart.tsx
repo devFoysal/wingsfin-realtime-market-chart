@@ -13,10 +13,10 @@ import {
   Sun,
   Waves
 } from "lucide-react";
-import { Button } from "../../../components/ui/button";
-import { Select } from "../../../components/ui/select";
-import type { ChartPoint, HistoryResponse, InstrumentType, Tick } from "../types/market";
-import { ageLabel, formatNumber, formatSigned, formatTime } from "../../../utils/format";
+import { Button } from "../../components/ui/button";
+import { Select } from "../../components/ui/select";
+import type { ChartPoint, HistoryResponse, InstrumentType, Tick } from "../../dtos/market";
+import { ageLabel, formatNumber, formatSigned, formatTime } from "../../utils/format";
 
 export type ChartVariant = "area" | "line";
 export type ThemeMode = "light" | "dark";

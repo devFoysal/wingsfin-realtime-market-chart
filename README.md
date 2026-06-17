@@ -150,13 +150,17 @@ Key env vars:
 │   ├── package.json
 │   ├── postcss.config.js
 │   ├── src
-│   │   ├── app/
+│   │   ├── __tests__/
+│   │   ├── App.tsx
 │   │   ├── assets/
 │   │   ├── components/
-│   │   ├── config/
+│   │   ├── dtos/
 │   │   ├── features/
 │   │   ├── hooks/
 │   │   ├── main.tsx
+│   │   ├── schema/
+│   │   ├── services/
+│   │   ├── store/
 │   │   ├── test-setup.ts
 │   │   ├── utils/
 │   │   └── vite-env.d.ts

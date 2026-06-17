@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import type { InstrumentType, Tick, HistoryResponse } from "../types/market";
-import { marketKeys } from "./marketApi";
+import type { InstrumentType, Tick, HistoryResponse } from "../dtos/market";
+import { marketKeys } from "../services/marketApi";
 import { applyLiveTick, defaultSymbols } from "../utils/market";
-import { streamUrl } from "../../../utils/api-client";
+import { streamUrl } from "../services/api-client";
 
 export function useMarketStream(args: {
   chartType: InstrumentType;

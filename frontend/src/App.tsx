@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { AlertCircle } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
-import { MarketChart } from "../features/market/components/MarketChart";
-import type { ChartVariant } from "../features/market/components/MarketChart";
-import type { InstrumentType } from "../features/market/types/market";
-import { marketApi } from "../features/market/api/marketApi";
-import { useMarketStream } from "../features/market/api/useMarketStream";
-import { useQueryErrorToast } from "../hooks/useQueryErrorToast";
-import { useThemeMode } from "../hooks/useThemeMode";
-import { defaultSymbols } from "../features/market/utils/market";
+import { MarketChart } from "./features/market/MarketChart";
+import type { ChartVariant } from "./features/market/MarketChart";
+import type { InstrumentType } from "./dtos/market";
+import { marketApi } from "./services/marketApi";
+import { useMarketStream } from "./hooks/useMarketStream";
+import { useQueryErrorToast } from "./hooks/useQueryErrorToast";
+import { useThemeMode } from "./hooks/useThemeMode";
+import { defaultSymbols } from "./utils/market";
 
 export default function App() {
   const queryClient = useQueryClient();

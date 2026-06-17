@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./config/query-client";
+import { queryClient } from "./store/query-client";
 import { Toaster } from "sonner";
-import App from "./app/App";
-import "./assets/styles/global.css";
+import App from "./App";
+import "./assets/css/global.css";
 
 
 

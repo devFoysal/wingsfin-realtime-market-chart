@@ -1,5 +1,5 @@
-import type { ChartPoint, HistoryResponse, MarketInfo, Tick, InstrumentType } from "../types/market";
-import { minuteKey } from "../../../utils/time";
+import type { ChartPoint, HistoryResponse, MarketInfo, Tick, InstrumentType } from "../dtos/market";
+import { minuteKey } from "./time";
 
 export const defaultSymbols: Record<InstrumentType, string> = {
   index: "DSEX",

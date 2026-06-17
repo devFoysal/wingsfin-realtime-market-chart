@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import type { HistoryResponse, InstrumentType, MarketInfo } from "../types/market";
-import { request } from "../../../utils/api-client";
+import type { HistoryResponse, InstrumentType, MarketInfo } from "../dtos/market";
+import { request } from "./api-client";
 import { defaultSymbols } from "../utils/market";
 
 export const marketKeys = {
