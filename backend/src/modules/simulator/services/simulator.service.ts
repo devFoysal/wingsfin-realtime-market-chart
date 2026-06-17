@@ -1,8 +1,8 @@
-import { config } from "../../config/env.js";
-import { getMarketSession, latestVisibleMinute } from "../market/market-session.js";
-import { getInstrument, storeTick, tickToSourcePayload } from "../market/ticks.service.js";
-import type { InstrumentType } from "../market/types.js";
-import { shapedMarketValue } from "./market-shape.js";
+import { config } from "../../../config/env.js";
+import { getMarketSession, latestVisibleMinute } from "../../market/services/session.service.js";
+import { getInstrument, storeTick, tickToSourcePayload } from "../../market/services/ticks.service.js";
+import type { InstrumentType } from "../../market/types/market.types.js";
+import { shapedMarketValue } from "./market-shape.service.js";
 
 interface SimulatorState {
   noise: number;

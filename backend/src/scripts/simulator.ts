@@ -1,6 +1,6 @@
 import { closeRedis, connectRedis, redisSubscriber } from "../infrastructure/redis/client.js";
-import { tickChannel } from "../modules/market/ticks.service.js";
-import { startSimulator } from "../modules/simulator/simulator.service.js";
+import { tickChannel } from "../modules/market/services/ticks.service.js";
+import { startSimulator } from "../modules/simulator/services/simulator.service.js";
 
 await connectRedis();
 await redisSubscriber.subscribe(tickChannel());

@@ -1,9 +1,9 @@
 import { DateTime } from "luxon";
 import { config } from "../config/env.js";
 import { closeDb, pool } from "../infrastructure/postgres/pool.js";
-import { getMarketSession } from "../modules/market/market-session.js";
-import { getInstrument, tickToSourcePayload } from "../modules/market/ticks.service.js";
-import { shapedMarketValue } from "../modules/simulator/market-shape.js";
+import { getMarketSession } from "../modules/market/services/session.service.js";
+import { getInstrument, tickToSourcePayload } from "../modules/market/services/ticks.service.js";
+import { shapedMarketValue } from "../modules/simulator/services/market-shape.service.js";
 
 function seededRandom(seed: number) {
   let value = seed;

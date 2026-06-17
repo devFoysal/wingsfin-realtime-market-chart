@@ -1,9 +1,9 @@
 import type { NextFunction, Request, Response } from "express";
 import type { ChartHistoryDto, ChartQueryDto } from "../dtos/market.dto.js";
-import { redisSubscriber } from "../infrastructure/redis/client.js";
-import { getMarketSession } from "../modules/market/market-session.js";
-import { chartQuerySchema } from "../modules/market/schemas.js";
-import { getHistory, type MarketStreamEvent } from "../modules/market/ticks.service.js";
+import { redisSubscriber } from "../../../infrastructure/redis/client.js";
+import { getMarketSession } from "../services/session.service.js";
+import { chartQuerySchema } from "../schemas/market.schema.js";
+import { getHistory, type MarketStreamEvent } from "../services/ticks.service.js";
 
 export async function getChartHistory(
   req: Request<unknown, ChartHistoryDto, unknown, ChartQueryDto>,

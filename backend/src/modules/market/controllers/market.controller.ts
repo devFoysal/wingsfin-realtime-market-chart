@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import type { InstrumentsResponseDto, MarketStatusDto } from "../dtos/market.dto.js";
-import { getMarketSession } from "../modules/market/market-session.js";
-import { listInstruments } from "../modules/market/ticks.service.js";
+import { getMarketSession } from "../services/session.service.js";
+import { listInstruments } from "../services/ticks.service.js";
 
 /**
  * @openapi

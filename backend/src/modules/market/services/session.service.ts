@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import { config } from "../../config/env.js";
+import { config } from "../../../config/env.js";
 
 export interface MarketSession {
   now: DateTime;

@@ -1,8 +1,8 @@
 import pg from "pg";
 import { config } from "../../config/env.js";
 import { logger } from "../../config/logger.js";
-import { publishInvalidation, publishTick } from "../../modules/market/ticks.service.js";
-import type { InstrumentType, Tick } from "../../modules/market/types.js";
+import { publishInvalidation, publishTick } from "../../modules/market/services/ticks.service.js";
+import type { InstrumentType, Tick } from "../../modules/market/types/market.types.js";
 
 const { Client } = pg;
 const CHANNEL = "market_ticks_changed";

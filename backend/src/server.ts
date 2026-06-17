@@ -5,8 +5,8 @@ import { createApp } from "./http/app.js";
 import { closeDb } from "./infrastructure/postgres/pool.js";
 import { startMarketTickListener } from "./infrastructure/postgres/tick-listener.js";
 import { closeRedis, connectRedis, redisSubscriber } from "./infrastructure/redis/client.js";
-import { tickChannel } from "./modules/market/ticks.service.js";
-import { startSimulator } from "./modules/simulator/simulator.service.js";
+import { tickChannel } from "./modules/market/services/ticks.service.js";
+import { startSimulator } from "./modules/simulator/services/simulator.service.js";
 
 async function main() {
   await connectRedis();

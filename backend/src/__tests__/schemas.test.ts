@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { indexPayloadSchema, stockPayloadSchema } from "../modules/market/schemas.js";
+import { indexPayloadSchema, stockPayloadSchema } from "../modules/market/schemas/market.schema.js";
 
 describe("source payload validation", () => {
   it("accepts index updates", () => {

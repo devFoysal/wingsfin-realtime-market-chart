@@ -1,5 +1,5 @@
 import { bigserial, integer, jsonb, numeric, pgTable, serial, text, timestamp, unique } from "drizzle-orm/pg-core";
-import type { InstrumentType } from "../modules/market/types.js";
+import type { InstrumentType } from "../modules/market/types/market.types.js";
 
 export const instruments = pgTable(
   "instruments",

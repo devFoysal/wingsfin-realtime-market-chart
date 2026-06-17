@@ -1,6 +1,6 @@
-import type { ChartPoint, Instrument, InstrumentType, Tick } from "../modules/market/types.js";
+import type { ChartPoint, Instrument, InstrumentType, Tick } from "../types/market.types.js";
 import type { z } from "zod";
-import type { chartQuerySchema, simulateTickSchema } from "../modules/market/schemas.js";
+import type { chartQuerySchema, simulateTickSchema } from "../schemas/market.schema.js";
 
 export type ChartQueryDto = z.infer<typeof chartQuerySchema>;
 export type SimulateTickDto = z.infer<typeof simulateTickSchema>;

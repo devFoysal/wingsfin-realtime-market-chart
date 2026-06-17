@@ -8,8 +8,8 @@ vi.stubEnv("MARKET_TIMEZONE", "Asia/Dhaka");
 
 describe("gapless chart series", () => {
   it("uses latest tick within a minute and carries forward missing minutes", async () => {
-    const { getMarketSession } = await import("../modules/market/market-session.js");
-    const { buildGaplessSeries } = await import("../modules/market/ticks.service.js");
+    const { getMarketSession } = await import("../modules/market/services/session.service.js");
+    const { buildGaplessSeries } = await import("../modules/market/services/ticks.service.js");
     const session = getMarketSession(DateTime.fromISO("2026-06-15T10:02:30", { zone: "Asia/Dhaka" }));
 
     const points = buildGaplessSeries({
@@ -32,7 +32,7 @@ describe("gapless chart series", () => {
   });
 
   it("keeps shaped simulator values inside required ranges", async () => {
-    const { shapedMarketValue } = await import("../modules/simulator/market-shape.js");
+    const { shapedMarketValue } = await import("../modules/simulator/services/market-shape.service.js");
     const indexValues = Array.from({ length: 101 }, (_, index) =>
       shapedMarketValue({ baseline: 5222.22, progress: index / 100, range: 100, noise: index % 2 ? 0.5 : -0.5 })
     );
