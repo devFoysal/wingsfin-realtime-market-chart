@@ -1,6 +1,6 @@
 # WingFin Real-Time Market Chart
 
-Production-grade take-home implementation for real-time index and stock charts.
+WingFin real-time index and stock charts.
 
 ## System Expectations
 
@@ -116,23 +116,58 @@ Key env vars:
 
 `MARKET_STATUS_OVERRIDE=auto` strictly follows the configured clock hours. Use `open` only when you want to force the live demo outside market hours, or `closed` to test the closed-market message.
 
-## Folder Structure
+## Project Tree
 
 ```text
-backend/src
-  config/                  Environment and logger setup
-  http/                    Express app and OpenAPI setup
-  infrastructure/          PostgreSQL and Redis clients
-  modules/market/          Market sessions, schemas, tick services, chart series
-  modules/simulator/       Fake irregular source update simulator
-  scripts/                 Migration, seed, and simulator CLIs
-
-frontend/src
-  app/                     React app shell
-  components/ui/           Shared shadcn-style primitives
-  features/market/         Market chart UI, API service, and types
-  hooks/                   React hooks for market, theme, and errors
-  utils/                   Shared utilities and API client
+.
+├── backend
+│   ├── Dockerfile
+│   ├── drizzle.config.ts
+│   ├── eslint.config.js
+│   ├── migrations/
+│   ├── package.json
+│   ├── src
+│   │   ├── __tests__/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── db/
+│   │   ├── http/
+│   │   ├── infrastructure/
+│   │   ├── modules/
+│   │   ├── routes/
+│   │   ├── scripts/
+│   │   ├── server.ts
+│   │   └── swagger/
+│   ├── tsconfig.json
+│   └── vitest.config.ts
+├── docker-compose.yml
+├── docs/
+├── frontend
+│   ├── Dockerfile
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── nginx.conf
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── src
+│   │   ├── app/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── config/
+│   │   ├── features/
+│   │   ├── hooks/
+│   │   ├── main.tsx
+│   │   ├── test-setup.ts
+│   │   ├── utils/
+│   │   └── vite-env.d.ts
+│   ├── tailwind.config.ts
+│   ├── tsconfig.json
+│   └── vite.config.ts
+├── infra/
+├── Makefile
+├── package-lock.json
+├── package.json
+└── README.md
 ```
 
 ## API Examples

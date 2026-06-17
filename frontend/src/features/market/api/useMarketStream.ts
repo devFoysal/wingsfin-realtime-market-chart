@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import type { InstrumentType, Tick, HistoryResponse } from "../types/market";
+import { marketKeys } from "./marketApi";
 import { applyLiveTick, defaultSymbols } from "../utils/market";
-import { streamUrl } from "../../../lib/api-client";
+import { streamUrl } from "../../../utils/api-client";
 
 export function useMarketStream(args: {
   chartType: InstrumentType;
@@ -25,23 +26,23 @@ export function useMarketStream(args: {
       try {
         const tick = JSON.parse((event as MessageEvent<string>).data) as Tick;
         setLiveTicks((current) => [tick, ...current].slice(0, 8));
-        queryClient.setQueryData<HistoryResponse>(["history", args.chartType], (current) => {
+        queryClient.setQueryData<HistoryResponse>(marketKeys.history(args.chartType), (current) => {
           if (!current) return current;
           const next = applyLiveTick(current, tick);
           if (next === current) {
-            window.setTimeout(() => void queryClient.invalidateQueries({ queryKey: ["history", args.chartType] }), 0);
+            window.setTimeout(() => void queryClient.invalidateQueries({ queryKey: marketKeys.history(args.chartType) }), 0);
           }
           return next;
         });
       } catch {
-        void queryClient.invalidateQueries({ queryKey: ["history", args.chartType] });
+        void queryClient.invalidateQueries({ queryKey: marketKeys.history(args.chartType) });
       }
     });
     source.addEventListener("invalidate", () => {
-      void queryClient.invalidateQueries({ queryKey: ["history", args.chartType] });
+      void queryClient.invalidateQueries({ queryKey: marketKeys.history(args.chartType) });
     });
     source.addEventListener("market-change", () => {
-      void queryClient.invalidateQueries({ queryKey: ["history", args.chartType] });
+      void queryClient.invalidateQueries({ queryKey: marketKeys.history(args.chartType) });
     });
     source.onerror = () => {
       setConnected(false);

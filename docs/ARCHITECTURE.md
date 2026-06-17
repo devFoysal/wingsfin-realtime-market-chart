@@ -55,3 +55,23 @@ Authentication is intentionally omitted because the assignment asks for an evalu
 Default Docker Compose enables `MARKET_STATUS_OVERRIDE=open` so reviewers can see live charts immediately. Set it to `auto` to use the configured `MARKET_OPEN_TIME`, `MARKET_CLOSE_TIME`, and `MARKET_TIMEZONE`.
 
 pgAdmin is included for database inspection. The Timescale hypertable is `market_ticks`; instrument metadata lives in `instruments`.
+
+## Project Structure
+
+```text
+backend/src
+  config/                  Environment and logger setup
+  http/                    Express app and OpenAPI setup
+  infrastructure/          PostgreSQL and Redis clients
+  modules/market/          Market sessions, schemas, tick services, chart series
+  modules/simulator/       Fake irregular source update simulator
+  scripts/                 Migration, seed, and simulator CLIs
+
+frontend/src
+  app/                     React app shell and top-level tests
+  assets/styles/           Global CSS styles
+  components/ui/           Shared shadcn-style primitives
+  features/market/         Market domain logic (components, hooks, utils, types, api)
+  hooks/                   Global React hooks (theme, errors)
+  utils/                   Global utilities (api-client, styles)
+```

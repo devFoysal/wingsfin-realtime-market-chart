@@ -4,8 +4,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { MarketChart } from "../features/market/components/MarketChart";
 import type { ChartVariant } from "../features/market/components/MarketChart";
 import type { InstrumentType } from "../features/market/types/market";
-import { useMarketHistory, useMarketStatus } from "../features/market/hooks/useMarketQueries";
-import { useMarketStream } from "../features/market/hooks/useMarketStream";
+import { marketApi } from "../features/market/api/marketApi";
+import { useMarketStream } from "../features/market/api/useMarketStream";
 import { useQueryErrorToast } from "../hooks/useQueryErrorToast";
 import { useThemeMode } from "../hooks/useThemeMode";
 import { defaultSymbols } from "../features/market/utils/market";
@@ -15,8 +15,8 @@ export default function App() {
   const [chartType, setChartType] = useState<InstrumentType>("index");
   const [chartVariant, setChartVariant] = useState<ChartVariant>("area");
   const { themeMode, setThemeMode } = useThemeMode();
-  const historyQuery = useMarketHistory(chartType);
-  const marketQuery = useMarketStatus();
+  const historyQuery = marketApi.useGetMarketHistoryQuery(chartType);
+  const marketQuery = marketApi.useGetMarketStatusQuery();
   const { connected, liveTicks } = useMarketStream({
     chartType,
     isOpen: marketQuery.data?.status === "OPEN"
