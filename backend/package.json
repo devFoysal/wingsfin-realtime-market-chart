@@ -1,0 +1,50 @@
+{
+  "name": "@wingfin/backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "migrate": "tsx src/scripts/migrate.ts",
+    "seed": "tsx src/scripts/seed.ts",
+    "simulate": "tsx src/scripts/simulator.ts",
+    "drizzle:generate": "drizzle-kit generate --config drizzle.config.ts",
+    "drizzle:studio": "drizzle-kit studio --config drizzle.config.ts",
+    "test": "vitest run",
+    "lint": "eslint \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.45.2",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.4.2",
+    "luxon": "^3.5.0",
+    "pg": "^8.13.1",
+    "pino": "^9.5.0",
+    "pino-http": "^10.4.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.7",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9.17.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.8"
+  }
+}

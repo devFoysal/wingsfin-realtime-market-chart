@@ -1,0 +1,10 @@
+flowchart LR
+  User["Browser / React UI"] --> Nginx["Nginx reverse proxy"]
+  Nginx --> Web["Static React app"]
+  Nginx --> API["Express API"]
+  API --> DB["PostgreSQL + TimescaleDB"]
+  API --> Redis["Redis Pub/Sub"]
+  Simulator["Irregular source simulator"] --> API
+  Redis --> API
+  API -- "SSE stream" --> User
+  PgAdmin["pgAdmin"] --> DB

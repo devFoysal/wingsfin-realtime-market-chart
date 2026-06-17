@@ -1,7 +1,7 @@
 .PHONY: up down logs migrate seed test lint build clean
 
 up:
-	docker compose up -d --build --wait --remove-orphans
+	docker compose up -d --build --pull always --wait --remove-orphans
 
 down:
 	docker compose down

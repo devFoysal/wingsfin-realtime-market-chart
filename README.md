@@ -36,6 +36,7 @@ docker compose up --build
 
 Running `docker compose up --build` is intended to start the full system: API, web app, PostgreSQL/TimescaleDB, Redis, Nginx, and pgAdmin.
 If Docker is reusing stale state after a teardown, run `make clean && make up` once to force a fresh stack.
+If Redis still fails with a cached-image style error, `make down && docker compose pull redis && make up` will force a fresh Redis image before starting again.
 
 Open:
 
