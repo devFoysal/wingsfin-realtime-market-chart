@@ -4,11 +4,11 @@ import { useQueryClient } from "@tanstack/react-query";
 import { MarketChart } from "../features/market/components/MarketChart";
 import type { ChartVariant } from "../features/market/components/MarketChart";
 import type { InstrumentType } from "../features/market/types/market";
-import { useMarketHistory, useMarketStatus } from "../hooks/useMarketQueries";
-import { useMarketStream } from "../hooks/useMarketStream";
+import { useMarketHistory, useMarketStatus } from "../features/market/hooks/useMarketQueries";
+import { useMarketStream } from "../features/market/hooks/useMarketStream";
 import { useQueryErrorToast } from "../hooks/useQueryErrorToast";
 import { useThemeMode } from "../hooks/useThemeMode";
-import { defaultSymbols } from "../utils/market";
+import { defaultSymbols } from "../features/market/utils/market";
 
 export default function App() {
   const queryClient = useQueryClient();

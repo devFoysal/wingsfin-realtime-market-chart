@@ -1,5 +1,5 @@
 import type { HistoryResponse, InstrumentType, MarketInfo } from "../types/market";
-import { request } from "../../../utils/api-client";
+import { request } from "../../../lib/api-client";
 
 export function fetchHistory(type: InstrumentType, symbol: string) {
   return request<HistoryResponse>(`/charts/history?type=${type}&symbol=${encodeURIComponent(symbol)}`);

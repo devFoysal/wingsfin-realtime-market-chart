@@ -1,6 +1,7 @@
 import { config } from "../../../config/env.js";
 import { getMarketSession, latestVisibleMinute } from "../../market/services/session.service.js";
-import { getInstrument, storeTick, tickToSourcePayload } from "../../market/services/ticks.service.js";
+import { storeTick, tickToSourcePayload } from "../../market/services/ticks.service.js";
+import { getInstrument } from "../../market/services/instruments.service.js";
 import type { InstrumentType } from "../../market/types/market.types.js";
 import { shapedMarketValue } from "./market-shape.service.js";
 

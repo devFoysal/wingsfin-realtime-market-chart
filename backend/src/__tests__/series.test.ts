@@ -9,7 +9,7 @@ vi.stubEnv("MARKET_TIMEZONE", "Asia/Dhaka");
 describe("gapless chart series", () => {
   it("uses latest tick within a minute and carries forward missing minutes", async () => {
     const { getMarketSession } = await import("../modules/market/services/session.service.js");
-    const { buildGaplessSeries } = await import("../modules/market/services/ticks.service.js");
+    const { buildGaplessSeries } = await import("../modules/market/services/charts.service.js");
     const session = getMarketSession(DateTime.fromISO("2026-06-15T10:02:30", { zone: "Asia/Dhaka" }));
 
     const points = buildGaplessSeries({
