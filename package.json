@@ -1,0 +1,20 @@
+{
+  "name": "wingfin-realtime-market",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w backend & npm run dev -w frontend",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "test": "npm test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "migrate": "npm run migrate -w backend",
+    "seed": "npm run seed -w backend"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

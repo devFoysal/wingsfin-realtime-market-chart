@@ -1,0 +1,10 @@
+import { useEffect, useMemo, useState } from "react";
+
+export default function App() {
+
+  return (
+    <div>
+      <h1>App is running</h1>
+    </div>
+  );
+}
