@@ -300,15 +300,15 @@ export function MarketChart({
           </div>
 
           <div className={`rounded-lg ${chartTheme.panelBg} p-3 shadow-sm`}>
-            <div className="mb-3 flex flex-wrap items-start justify-between gap-2 px-1">
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-2 px-1">
               <div>
                 <h2 className={`text-base font-semibold ${chartTheme.headerText}`}>{data.instrument.symbol} live session</h2>
                 <p className={`text-sm ${chartTheme.subText}`}>Gapless 1-minute timeline with irregular source ticks</p>
               </div>
               <div className="flex flex-wrap items-center justify-end gap-2">
-                <div className={`inline-flex rounded-md ${chartTheme.chipBg} p-1`}>
+                <div className={`inline-flex h-[52px] items-center rounded-md ${chartTheme.chipBg} p-1`}>
                   <button
-                    className={`inline-flex h-8 items-center gap-1.5 rounded px-2.5 text-xs font-medium transition ${chartVariant === "area" ? "bg-primary text-primary-foreground" : chartTheme.inactiveVariantButton
+                    className={`inline-flex h-full items-center gap-1.5 rounded px-3 text-xs font-medium transition ${chartVariant === "area" ? "bg-primary text-primary-foreground" : chartTheme.inactiveVariantButton
                       }`}
                     type="button"
                     onClick={() => onChartVariantChange("area")}
@@ -317,7 +317,7 @@ export function MarketChart({
                     Area
                   </button>
                   <button
-                    className={`inline-flex h-8 items-center gap-1.5 rounded px-2.5 text-xs font-medium transition ${chartVariant === "line" ? "bg-primary text-primary-foreground" : chartTheme.inactiveVariantButton
+                    className={`inline-flex h-full items-center gap-1.5 rounded px-3 text-xs font-medium transition ${chartVariant === "line" ? "bg-primary text-primary-foreground" : chartTheme.inactiveVariantButton
                       }`}
                     type="button"
                     onClick={() => onChartVariantChange("line")}
@@ -326,48 +326,33 @@ export function MarketChart({
                     Line
                   </button>
                 </div>
-                <div className={`rounded-md ${chartTheme.chipBg} px-3 py-2 text-right`}>
-                  <div className={`text-xs font-medium uppercase ${chartTheme.chipLabel}`}>Previous close</div>
-                  <div className={`text-sm font-semibold ${chartTheme.chipValue}`}>{formatNumber(data.referenceValue)}</div>
+                <div className={`flex h-[52px] flex-col justify-center rounded-md ${chartTheme.chipBg} px-3 text-right`}>
+                  <div className={`text-[10px] font-medium uppercase leading-tight ${chartTheme.chipLabel}`}>Previous close</div>
+                  <div className={`text-sm font-semibold leading-tight ${chartTheme.chipValue}`}>{formatNumber(data.referenceValue)}</div>
                 </div>
-                <div className={`rounded-md ${chartTheme.chipBg} px-3 py-2 text-right`}>
-                  <div className={`text-xs font-medium uppercase ${chartTheme.chipLabel}`}>Source tick</div>
-                  <div className={`text-sm font-semibold ${chartTheme.chipValue}`}>{ageLabel(lastTick?.time)}</div>
+                <div className={`flex h-[52px] items-center gap-3 rounded-md ${chartTheme.chipBg} p-1.5 pr-3`}>
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded" style={{ backgroundColor: latest?.color ?? chartTheme.line }}>
+                    <span className="text-xs font-bold text-white shadow-sm">
+                      {currentSymbol.slice(0, 2)}
+                    </span>
+                  </div>
+                  <div className="flex flex-col justify-center text-right">
+                    <div className={`text-[10px] font-medium uppercase leading-tight ${chartTheme.chipLabel}`}>
+                      Latest · {latest ? formatTime(latest.minute) : "--"}
+                    </div>
+                    <div className="mt-0.5 flex items-baseline justify-end gap-1.5 leading-none">
+                      <div className={`text-sm font-semibold ${chartTheme.chipValue}`}>
+                        {formatNumber(latest?.value)}
+                      </div>
+                      <div className={`text-xs font-semibold ${change >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
+                        {formatSigned(change)}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="relative h-[58vh] min-h-[420px] w-full overflow-hidden rounded-[6px]">
-              {/* <div className="pointer-events-none absolute right-4 top-4 z-10">
-                <div
-                  className={`flex items-center gap-3 rounded-xl px-4 py-3 shadow-lg backdrop-blur-md ${
-                    themeMode === "dark"
-                      ? "bg-slate-950/80 text-slate-50"
-                      : "bg-white/85 text-slate-900"
-                  }`}
-                >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ backgroundColor: latest?.color ?? chartTheme.line }}>
-                    <span className="text-sm font-semibold text-white">
-                      {currentSymbol.slice(0, 2)}
-                    </span>
-                  </div>
-                  <div className="min-w-0">
-                    <div className={`text-[11px] font-medium uppercase tracking-[0.18em] ${themeMode === "dark" ? "text-slate-400" : "text-slate-500"}`}>
-                      Latest value
-                    </div>
-                    <div className="flex items-end gap-2">
-                      <div className="text-2xl font-semibold leading-none tracking-tight">
-                        {formatNumber(latest?.value)}
-                      </div>
-                      <div className={`text-sm font-semibold ${change >= 0 ? "text-emerald-500" : "text-rose-500"}`}>
-                        {formatSigned(change)}
-                      </div>
-                    </div>
-                    <div className={`mt-1 text-xs ${themeMode === "dark" ? "text-slate-400" : "text-slate-500"}`}>
-                      {latest ? formatTime(latest.minute) : "--"} · current minute
-                    </div>
-                  </div>
-                </div>
-              </div> */}
               <ReactECharts option={option} style={{ height: "100%", width: "100%" }} notMerge lazyUpdate />
             </div>
           </div>
