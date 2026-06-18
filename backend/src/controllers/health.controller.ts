@@ -16,5 +16,5 @@ interface HealthResponseDto {
  *         description: API health
  */
 export function getHealth(_req: Request, res: Response<HealthResponseDto>) {
-  res.json({ ok: true, service: "wingfin-api", redis: redisStatus() });
+  res.json({ ok: true, service: "wingsfin-api", redis: redisStatus() });
 }

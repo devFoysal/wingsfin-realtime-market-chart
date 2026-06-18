@@ -1,6 +1,6 @@
-# WingFin Real-Time Market Chart
+# WingsFin Real-Time Market Chart
 
-WingFin real-time index and stock charts.
+WingsFin real-time index and stock charts.
 
 ## System Expectations
 
@@ -50,13 +50,13 @@ pgAdmin login:
 - Email: `admin@example.com`
 - Password: `admin`
 
-The WingFin database is auto-registered as `WingFin TimescaleDB`. If you ever need to register manually:
+The WingsFin database is auto-registered as `WingsFin TimescaleDB`. If you ever need to register manually:
 
 - Host: `postgres`
 - Port: `5432`
-- Database: `wingfin`
-- Username: `wingfin`
-- Password: `wingfin`
+- Database: `wingsfin`
+- Username: `wingsfin`
+- Password: `wingsfin`
 
 ## Useful Commands
 
@@ -96,7 +96,7 @@ npm run dev -w frontend
 For local development without Docker, run PostgreSQL with TimescaleDB and Redis, then set:
 
 ```bash
-DATABASE_URL=postgres://wingfin:wingfin@localhost:5432/wingfin
+DATABASE_URL=postgres://wingsfin:wingsfin@localhost:5432/wingsfin
 REDIS_URL=redis://localhost:6379
 ```
 

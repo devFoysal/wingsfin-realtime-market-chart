@@ -224,7 +224,7 @@ export function MarketChart({
               <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
                 <Waves className="h-4 w-4" />
               </span>
-              <h1 className="text-xl font-semibold text-foreground">WingFin Market Monitor</h1>
+              <h1 className="text-xl font-semibold text-foreground">WingsFin Market Monitor</h1>
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-700">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
                 {data.market.status}

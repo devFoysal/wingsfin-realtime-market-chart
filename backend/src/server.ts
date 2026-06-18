@@ -18,7 +18,7 @@ async function main() {
   const stopSimulator = startSimulator();
 
   server.listen(config.API_PORT, () => {
-    logger.info({ port: config.API_PORT }, "WingFin API listening");
+    logger.info({ port: config.API_PORT }, "WingsFin API listening");
   });
 
   const shutdown = async () => {

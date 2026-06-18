@@ -4,7 +4,7 @@ export type ThemeMode = "light" | "dark";
 
 function initialThemeMode(): ThemeMode {
   try {
-    const stored = window.localStorage?.getItem?.("wingfin-theme");
+    const stored = window.localStorage?.getItem?.("wingsfin-theme");
     if (stored === "light" || stored === "dark") return stored;
   } catch {
     return "light";
@@ -18,7 +18,7 @@ export function useThemeMode() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", themeMode === "dark");
-    window.localStorage?.setItem?.("wingfin-theme", themeMode);
+    window.localStorage?.setItem?.("wingsfin-theme", themeMode);
   }, [themeMode]);
 
   return { themeMode, setThemeMode };

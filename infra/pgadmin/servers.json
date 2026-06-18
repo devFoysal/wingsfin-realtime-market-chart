@@ -1,12 +1,12 @@
 {
   "Servers": {
     "1": {
-      "Name": "WingFin TimescaleDB",
+      "Name": "WingsFin TimescaleDB",
       "Group": "Servers",
       "Host": "postgres",
       "Port": 5432,
-      "MaintenanceDB": "wingfin",
-      "Username": "wingfin",
+      "MaintenanceDB": "wingsfin",
+      "Username": "wingsfin",
       "SSLMode": "prefer",
       "PassFile": "/pgpass"
     }

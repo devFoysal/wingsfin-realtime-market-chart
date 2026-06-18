@@ -4,7 +4,7 @@ import { z } from "zod";
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   API_PORT: z.coerce.number().int().positive().default(4000),
-  DATABASE_URL: z.string().default("postgres://wingfin:wingfin@localhost:5432/wingfin"),
+  DATABASE_URL: z.string().default("postgres://wingsfin:wingsfin@localhost:5432/wingsfin"),
   REDIS_URL: z.string().default("redis://localhost:6379"),
   CORS_ORIGIN: z.string().default("http://localhost:5173,http://localhost:8080"),
   MARKET_TIMEZONE: z.string().default("Asia/Dhaka"),

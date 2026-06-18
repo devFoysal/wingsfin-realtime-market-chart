@@ -36,9 +36,9 @@
 
    - Host: `postgres`
    - Port: `5432`
-   - Database: `wingfin`
-   - Username: `wingfin`
-   - Password: `wingfin`
+   - Database: `wingsfin`
+   - Username: `wingsfin`
+   - Password: `wingsfin`
 
 9. Inspect:
 

@@ -2,9 +2,9 @@ services:
   postgres:
     image: timescale/timescaledb:latest-pg16
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-wingfin}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wingfin}
-      POSTGRES_DB: ${POSTGRES_DB:-wingfin}
+      POSTGRES_USER: ${POSTGRES_USER:-wingsfin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wingsfin}
+      POSTGRES_DB: ${POSTGRES_DB:-wingsfin}
     command: >
       sh -c "
       if [ -f /var/lib/postgresql/data/postmaster.pid ] && ! head -n 1 /var/lib/postgresql/data/postmaster.pid | grep -Eq '^[0-9]+$'; then
@@ -17,7 +17,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-wingfin} -d ${POSTGRES_DB:-wingfin}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-wingsfin} -d ${POSTGRES_DB:-wingsfin}"]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -39,7 +39,7 @@ services:
     environment:
       NODE_ENV: production
       API_PORT: 4000
-      DATABASE_URL: ${DATABASE_URL:-postgres://wingfin:wingfin@postgres:5432/wingfin}
+      DATABASE_URL: ${DATABASE_URL:-postgres://wingsfin:wingsfin@postgres:5432/wingsfin}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173,http://localhost:8080}
       MARKET_TIMEZONE: ${MARKET_TIMEZONE:-Asia/Dhaka}
