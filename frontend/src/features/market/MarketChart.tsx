@@ -359,28 +359,6 @@ export function MarketChart({
         </div>
 
         <aside className="grid content-start gap-3">
-          <div className="rounded-lg bg-card p-4 shadow-sm">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-sm font-semibold">
-                <Radio className={connected ? "h-4 w-4 text-emerald-600" : "h-4 w-4 text-muted-foreground"} />
-                Fake source simulator
-              </div>
-              <span className={connected ? "h-2.5 w-2.5 animate-ping rounded-full bg-emerald-500" : "h-2.5 w-2.5 rounded-full bg-slate-300"} />
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Unequal updates arrive within 3 seconds. Index fluctuates +/-100 and stock +/-1 around the baseline.
-            </p>
-            <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-              <div className="rounded-md bg-muted p-3">
-                <div className="text-muted-foreground">Transport</div>
-                <div className="mt-1 font-semibold text-foreground">SSE</div>
-              </div>
-              <div className="rounded-md bg-muted p-3">
-                <div className="text-muted-foreground">Last event</div>
-                <div className="mt-1 font-semibold text-foreground">{ageLabel(lastTick?.time)}</div>
-              </div>
-            </div>
-          </div>
 
           <div className="rounded-lg bg-card p-4 shadow-sm">
             <div className="mb-3 flex items-center gap-2 text-sm font-semibold">
