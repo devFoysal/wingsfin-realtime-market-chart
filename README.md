@@ -2,6 +2,9 @@
 
 WingsFin real-time index and stock charts.
 
+- **Demo Video:** [Watch the demo](https://www.awesomescreenshot.com/video/53722103?key=ca0c2fc1dc9b2acb46de9a7e2921ef63)
+- **GitHub Repository:** [devFoysal/wingsfin-realtime-market-chart](https://github.com/devFoysal/wingsfin-realtime-market-chart)
+
 ## System Expectations
 
 - Page load time stays low by serving the web app through Nginx and keeping the initial experience focused.
